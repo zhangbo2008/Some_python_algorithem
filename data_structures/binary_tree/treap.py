@@ -18,7 +18,7 @@ class Node:
         from pprint import pformat
 
         if self.left is None and self.right is None:
-            return f"'{self.value}: {self.prior:.5}'"
+            return f"'{self.value}: {self.prior:.5}'"  # 默认就是.5的随机插入.
         else:
             return pformat(
                 {f"{self.value}: {self.prior:.5}": (self.left, self.right)}, indent=1

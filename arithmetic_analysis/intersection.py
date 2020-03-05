@@ -9,7 +9,7 @@ def intersection(
     while True:
         x_n2 = x_n1 - (
             function(x_n1) / ((function(x_n1) - function(x_n)) / (x_n1 - x_n))
-        )
+        )  # 就是牛顿法.
         if abs(x_n2 - x_n1) < 10 ** -5:
             return x_n2
         x_n = x_n1

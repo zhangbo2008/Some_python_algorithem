@@ -5,7 +5,8 @@ python/black : true
 flake8 : passed
 mypy : passed
 """
-
+# 可以参数靠这个链接,看看静态均衡是什么意思.
+#https://www.wisegeek.com/what-is-static-equilibrium.htm
 from numpy import array, cos, sin, radians, cross  # type: ignore
 from typing import List
 
@@ -16,9 +17,9 @@ def polar_force(
     """
     Resolves force along rectangular components.
     (force, angle) => (force_x, force_y)
-    >>> polar_force(10, 45)
+    # >>> polar_force(10, 45)
     [7.0710678118654755, 7.071067811865475]
-    >>> polar_force(10, 3.14, radian_mode=True)
+    # >>> polar_force(10, 3.14, radian_mode=True)
     [-9.999987317275394, 0.01592652916486828]
     """
     if radian_mode:
@@ -40,9 +41,9 @@ def in_static_equilibrium(
                         [x1, y1],
                         [x2, y2],
                         ....]
-    >>> force = array([[1, 1], [-1, 2]])
-    >>> location = array([[1, 0], [10, 0]])
-    >>> in_static_equilibrium(force, location)
+    # >>> force = array([[1, 1], [-1, 2]])
+    # >>> location = array([[1, 0], [10, 0]])
+    # >>> in_static_equilibrium(force, location)
     False
     """
     # summation of moments is zero
