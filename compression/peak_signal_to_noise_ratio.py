@@ -17,7 +17,6 @@ def psnr(original, contrast):
     PIXEL_MAX = 255.0
     PSNR = 20 * math.log10(PIXEL_MAX / math.sqrt(mse))
 
-
     # 其实本质就是mse的另外一种再做一下变换而已,
     return PSNR
 

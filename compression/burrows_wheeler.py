@@ -12,6 +12,7 @@ original character. The BWT is thus a "free" method of improving the efficiency
 of text compression algorithms, costing only some extra computation.
 """
 from typing import List, Dict
+
 # 下面是python 函数的类型注释的使用方法!!!!!!!!!!!1
 # https://www.cnblogs.com/baxianhua/p/11187155.html
 def all_rotations(s: str) -> List[str]:
@@ -77,7 +78,9 @@ def bwt_transform(s: str) -> Dict:
     rotations.sort()  # sort the list of rotations in alphabetically order
     # make a string composed of the last char of each rotation
     return {
-        "bwt_string": "".join([word[-1] for word in rotations]), # 取每一个单词的最后一个字母拼成一个字符串.
+        "bwt_string": "".join(
+            [word[-1] for word in rotations]
+        ),  # 取每一个单词的最后一个字母拼成一个字符串.
         "idx_original_string": rotations.index(s),  # 这个是s子啊rotation中的索引
     }
 
@@ -146,35 +149,24 @@ def reverse_bwt(bwt_string: str, idx_original_string: int) -> str:
             "The parameter idx_original_string must be lower than" " len(bwt_string)."
         )
 
-
-
-
-# 核心看这个怎么逆回去!!!!!!!!
+    # 核心看这个怎么逆回去!!!!!!!!
     ordered_rotations = [""] * len(bwt_string)
     for x in range(len(bwt_string)):
         for i in range(len(bwt_string)):
-            #每次循环都在头上加上字符串
+            # 每次循环都在头上加上字符串
             ordered_rotations[i] = bwt_string[i] + ordered_rotations[i]
         ordered_rotations.sort()
     return ordered_rotations[idx_original_string]
-
-
-
-
-
-
-
-
 
 
 if __name__ == "__main__":
     entry_msg = "Provide a string that I will generate its BWT transform: "
     # s = input(entry_msg).strip()
 
-    s='baaaxxxxxxxxxyyyyyyyyaaaaaaaaaa'
+    s = "baaaxxxxxxxxxyyyyyyyyaaaaaaaaaa"
     result = bwt_transform(s)
     bwt_output_msg = "Burrows Wheeler transform for string '{}' results in '{}'"
-    print(bwt_output_msg.format(s, result["bwt_string"]),result['idx_original_string'])
+    print(bwt_output_msg.format(s, result["bwt_string"]), result["idx_original_string"])
     original_string = reverse_bwt(result["bwt_string"], result["idx_original_string"])
     fmt = (
         "Reversing Burrows Wheeler transform for entry '{}' we get original"

@@ -7,6 +7,7 @@
 """
 # 这个问题有意思, 一个数组,一个sum,让你从数组中每一个数字只能至多用一次,频出sum. 求出所有解
 
+
 def generate_sum_of_subsets_soln(nums, max_sum):
     result = []
     path = []
@@ -14,6 +15,7 @@ def generate_sum_of_subsets_soln(nums, max_sum):
     remaining_nums_sum = sum(nums)
     create_state_space_tree(nums, max_sum, num_index, path, result, remaining_nums_sum)
     return result
+
 
 # 需要一个数据结构.
 def create_state_space_tree(nums, max_sum, num_index, path, result, remaining_nums_sum):
@@ -34,10 +36,10 @@ def create_state_space_tree(nums, max_sum, num_index, path, result, remaining_nu
             nums,
             max_sum,
             num_index + 1,
-            path + [nums[num_index]],   # 迭代就在这2步,选中
+            path + [nums[num_index]],  # 迭代就在这2步,选中
             result,
             remaining_nums_sum - nums[num_index],  #  然后在剩余中剔除.
-        )# 所以这个算法也就是暴力算法,等于把所有组合都品一边然后试试sum而已.
+        )  # 所以这个算法也就是暴力算法,等于把所有组合都品一边然后试试sum而已.
 
 
 """

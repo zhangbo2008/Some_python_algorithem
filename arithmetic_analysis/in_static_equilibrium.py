@@ -6,7 +6,7 @@ flake8 : passed
 mypy : passed
 """
 # 可以参数靠这个链接,看看静态均衡是什么意思.
-#https://www.wisegeek.com/what-is-static-equilibrium.htm
+# https://www.wisegeek.com/what-is-static-equilibrium.htm
 from numpy import array, cos, sin, radians, cross  # type: ignore
 from typing import List
 
