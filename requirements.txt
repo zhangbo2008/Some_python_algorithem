@@ -8,6 +8,7 @@ numpy>=1.17.4
 opencv-python
 pandas
 pillow
+
 pytest
 pytest-cov
 requests

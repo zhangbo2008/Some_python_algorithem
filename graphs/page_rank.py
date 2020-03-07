@@ -1,9 +1,17 @@
 """
 Author: https://github.com/bhushan-borole
+
+
+'''
+一种搜素引擎算法.
+
+'''
 """
 """
 The input graph for the algorithm is:
 
+
+这个图表示 写1 的点就表示从这个1所在的行index到列index 有一个访问. 行写入out, 列写入in
   A B C
 A 0 1 1
 B 0 0 1
@@ -29,7 +37,7 @@ class Node:
     def __repr__(self):
         return f"Node {self.name}: Inbound: {self.inbound} ; Outbound: {self.outbound}"
 
-
+#算法就是计算入度和出度.
 def page_rank(nodes, limit=3, d=0.85):
     ranks = {}
     for node in nodes:

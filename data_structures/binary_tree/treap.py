@@ -67,12 +67,18 @@ def merge(left: Node, right: Node) -> Node:
     """
     if (not left) or (not right):  # If one node is None, return the other
         return left or right
-    elif left.prior < right.prior:
+
+
+    # 这个merge函数是算法的核心. 本质上看作一种二叉树的旋转.
+    elif left.prior > right.prior:
         """
         Left will be root because it has more priority
         Now we need to merge left's right son and right tree
         """
-        left.right = merge(left.right, right)
+        left.right = merge(left.right, right) # 右边这个结果找到的是比left大的,当中优先级搞的.
+        # 谁优先级高,谁就更切近跟节点.这样就保证了平衡.从上到下都是一层一层的,有顺序就会保证平衡.
+        # 输入两个节点left,right,输出2个节点left.right  left所以就保证了所有点都跑遍. 从插入也能看出来
+        # 不要的right节点在外面还要再merge一次就可以了.
         return left
     else:
         """
@@ -92,6 +98,7 @@ def insert(root: Node, value: int) -> Node:
     """
     node = Node(value)
     left, right = split(root, value)
+    # 下行是核心.
     return merge(merge(left, node), right)
 
 

@@ -8,6 +8,9 @@ us determine how close a given array is to being sorted
 In this implementation, I provide two algorithms, a divide-and-conquer
 algorithm which runs in nlogn and the brute-force n^2 algorithm.
 
+
+
+计算逆序数.
 """
 
 
@@ -111,7 +114,7 @@ def _count_cross_inversions(P, Q):
     >>> _count_cross_inversions([1, 2, 3], [3, 4, 5])
     ([1, 2, 3, 3, 4, 5], 0)
     """
-
+# 其实就是归并排序而已.........
     R = []
     i = j = num_inversion = 0
     while i < len(P) and j < len(Q):

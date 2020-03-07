@@ -5,7 +5,7 @@ import numpy as np
 from cv2 import imread, cvtColor, COLOR_BGR2GRAY, imshow, waitKey
 from digital_image_processing.filters.convolve import img_convolve
 
-
+# sobel_filter 索贝尔检测算法.   本质还是卷积,来计算梯度.
 def sobel_filter(image):
     kernel_x = np.array([[-1, 0, 1], [-2, 0, 2], [-1, 0, 1]])
     kernel_y = np.array([[1, 2, 1], [0, 0, 0], [-1, -2, -1]])

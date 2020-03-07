@@ -1,4 +1,15 @@
 # Finding Bridges in Undirected Graph
+
+
+'''
+
+
+
+在图论中，一条边被称为“桥”代表这条边一旦被删除，这张图的连通块数量会增加。等价地说，一条边是一座桥当且仅当这条边不在任何环上。一张图可以有零或多座桥。
+
+就是articulation_points的另一种形式. 还是dfs,计算low数组即可.
+
+'''
 def computeBridges(l):
     id = 0
     n = len(l)  # No of vertices in graph
