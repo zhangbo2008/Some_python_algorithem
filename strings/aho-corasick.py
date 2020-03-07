@@ -1,15 +1,14 @@
 from collections import deque
 
-'''
+"""
 这个文件夹里面的字符串算法重视起来,好多实际中都有用!!!!!!!!!!
-'''
-
+"""
 
 
 class Automaton:
     def __init__(self, keywords):
         self.adlist = list()
-        self.adlist.append(# 先写入空字符串的信息.
+        self.adlist.append(  # 先写入空字符串的信息.
             {"value": "", "next_states": [], "fail_state": 0, "output": []}
         )
 

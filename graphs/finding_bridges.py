@@ -1,7 +1,7 @@
 # Finding Bridges in Undirected Graph
 
 
-'''
+"""
 
 
 
@@ -9,7 +9,9 @@
 
 就是articulation_points的另一种形式. 还是dfs,计算low数组即可.
 
-'''
+"""
+
+
 def computeBridges(l):
     id = 0
     n = len(l)  # No of vertices in graph

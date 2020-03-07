@@ -50,9 +50,6 @@ def haversine_distance(lat1: float, lon1: float, lat2: float, lon2: float) -> fl
     return 2 * RADIUS * asin(h_value)
 
 
-
-
-
 if __name__ == "__main__":
     import doctest
 

@@ -37,7 +37,8 @@ class Node:
     def __repr__(self):
         return f"Node {self.name}: Inbound: {self.inbound} ; Outbound: {self.outbound}"
 
-#算法就是计算入度和出度.
+
+# 算法就是计算入度和出度.
 def page_rank(nodes, limit=3, d=0.85):
     ranks = {}
     for node in nodes:

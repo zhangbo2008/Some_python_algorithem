@@ -19,11 +19,12 @@ def im2col(image, block_size):
 
     return image_array
 
+
 # 卷积运算
 def img_convolve(image, filter_kernel):
     height, width = image.shape[0], image.shape[1]
     k_size = filter_kernel.shape[0]
-    pad_size = k_size // 2   # pad=ker_size/2  显然这么算.
+    pad_size = k_size // 2  # pad=ker_size/2  显然这么算.
     # Pads image with the edge values of array.
     image_tmp = pad(image, pad_size, mode="edge")
 

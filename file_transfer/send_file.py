@@ -19,9 +19,9 @@ if __name__ == "__main__":
         print(f"Got connection from {addr}")
         data = conn.recv(1024)
         print(f"Server received {data}")
-# 本质就是传输字符串,这边读多少穿多少字符串,然后接受端,再存成文件.
+        # 本质就是传输字符串,这边读多少穿多少字符串,然后接受端,再存成文件.
         with open(filename, "rb") as in_file:
-            data = in_file.read(1024) # 每一次读1024个字节,然后send一下.
+            data = in_file.read(1024)  # 每一次读1024个字节,然后send一下.
             while data:
                 conn.send(data)
                 print(f"Sent {data!r}")

@@ -114,7 +114,7 @@ def _count_cross_inversions(P, Q):
     >>> _count_cross_inversions([1, 2, 3], [3, 4, 5])
     ([1, 2, 3, 3, 4, 5], 0)
     """
-# 其实就是归并排序而已.........
+    # 其实就是归并排序而已.........
     R = []
     i = j = num_inversion = 0
     while i < len(P) and j < len(Q):

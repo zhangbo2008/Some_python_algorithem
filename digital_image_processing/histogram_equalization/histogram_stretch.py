@@ -66,7 +66,7 @@ class contrastStretch:
 
 
 if __name__ == "__main__":
-    file_path =  "image_data/input.jpg"
+    file_path = "image_data/input.jpg"
     print(file_path)
     stretcher = contrastStretch()
     stretcher.stretch(file_path)

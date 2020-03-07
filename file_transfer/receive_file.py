@@ -15,7 +15,7 @@ if __name__ == "__main__":
             data = sock.recv(1024)  # 每一次接受1024个字节,
             print(f"data={data}")
             if not data:
-                break# 接受1024就写下来.
+                break  # 接受1024就写下来.
             out_file.write(data)  # Write data to a file
 
     print("Successfully got the file")

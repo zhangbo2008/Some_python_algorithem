@@ -13,7 +13,7 @@ def gen_gaussian_kernel(k_size, sigma):
         1
         / (2 * np.pi * sigma)
         * np.exp(-(np.square(x) + np.square(y)) / (2 * np.square(sigma)))
-    )# 返回高斯kernal
+    )  # 返回高斯kernal
     return g
 
 
@@ -40,7 +40,7 @@ def canny(image, threshold_low=15, threshold_high=30, weak=128, strong=255):
                 0 <= direction < 22.5
                 or 15 * PI / 8 <= direction <= 2 * PI
                 or 7 * PI / 8 <= direction <= 9 * PI / 8
-            ): # 跟这个方向的左右比,比他们都大,才留下!!!!!!!!!!!!
+            ):  # 跟这个方向的左右比,比他们都大,才留下!!!!!!!!!!!!
                 W = sobel_grad[row, col - 1]
                 E = sobel_grad[row, col + 1]
                 if sobel_grad[row, col] >= W and sobel_grad[row, col] >= E:
